@@ -29,6 +29,7 @@ def save_contacts(contacts):
     with open(DATA_FILE, "w", encoding="utf-8") as f:
         json.dump(contacts, f, ensure_ascii=False, indent=2)
 
+# input function
 def input_nonempty(prompt):
     while True:
         s = input(prompt).strip()
@@ -36,6 +37,7 @@ def input_nonempty(prompt):
             return s
         print("This field cannot be empty.")
 
+# find contact by id
 def find_contact_index_by_id(contacts, cid):
     for i, c in enumerate(contacts):
         if c["id"] == cid:
@@ -43,6 +45,7 @@ def find_contact_index_by_id(contacts, cid):
     return -1
 
 
+# print contacts
 def pretty_print_contacts(contacts):
     if not contacts:
         print("\n(No contacts found)\n")
@@ -55,6 +58,7 @@ def pretty_print_contacts(contacts):
     print("-" * 60)
 
 
+# add contacts
 def add_contact():
     contacts = load_contacts()
     print("\nAdd new contact")
@@ -75,9 +79,10 @@ def add_contact():
     }
     contacts.append(contact)
     save_contacts(contacts)
-    print("✅ Contact added successfully.")
+    print(" Contact added successfully.")
 
 
+# list contacts
 def list_contacts():
     contacts = load_contacts()
     pretty_print_contacts(contacts)
