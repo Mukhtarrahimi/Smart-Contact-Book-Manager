@@ -35,3 +35,6 @@ def input_nonempty(prompt):
         if s:
             return s
         print("This field cannot be empty.")
+
+def find_contact_index_by_id(contacts, cid):
+    pass
