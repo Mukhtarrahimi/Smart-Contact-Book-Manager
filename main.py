@@ -28,3 +28,6 @@ def load_contacts():
 def save_contacts(contacts):
     with open(DATA_FILE, "w", encoding="utf-8") as f:
         json.dump(contacts, f, ensure_ascii=False, indent=2)
+
+def input_nonempty(prompt):
+    pass
