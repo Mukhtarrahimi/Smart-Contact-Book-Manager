@@ -37,4 +37,7 @@ def input_nonempty(prompt):
         print("This field cannot be empty.")
 
 def find_contact_index_by_id(contacts, cid):
-    pass
+    for i, c in enumerate(contacts):
+        if c["id"] == cid:
+            return i
+    return -1
