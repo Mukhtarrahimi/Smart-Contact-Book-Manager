@@ -23,3 +23,8 @@ def load_contacts():
             return json.load(f)
     except json.JSONDecodeError:
         return []
+
+# save_contact function
+def save_contacts(contacts):
+    with open(DATA_FILE, "w", encoding="utf-8") as f:
+        json.dump(contacts, f, ensure_ascii=False, indent=2)
