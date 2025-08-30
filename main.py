@@ -41,3 +41,11 @@ def find_contact_index_by_id(contacts, cid):
         if c["id"] == cid:
             return i
     return -1
+
+
+def pretty_print_contacts(contacts):
+    if not contacts:
+        print("\n(No contacts found)\n")
+        return
+    print("\nContact List:")
+    print("-" * 60)
