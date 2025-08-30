@@ -73,4 +73,6 @@ def add_contact():
         "notes": notes,
         "created_at": datetime.now().isoformat(timespec="seconds"),
     }
-    
+    contacts.append(contact)
+    save_contacts(contacts)
+    print("✅ Contact added successfully.")
