@@ -49,3 +49,7 @@ def pretty_print_contacts(contacts):
         return
     print("\nContact List:")
     print("-" * 60)
+
+    for i, c in enumerate(contacts, start=1):
+        print(f"{i}. {c['name']} | {c['phone']} | {c['email']} | {c.get('group','-')}")
+    print("-" * 60)
