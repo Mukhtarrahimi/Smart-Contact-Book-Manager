@@ -53,3 +53,7 @@ def pretty_print_contacts(contacts):
     for i, c in enumerate(contacts, start=1):
         print(f"{i}. {c['name']} | {c['phone']} | {c['email']} | {c.get('group','-')}")
     print("-" * 60)
+
+
+def add_contact():
+    pass
