@@ -30,4 +30,8 @@ def save_contacts(contacts):
         json.dump(contacts, f, ensure_ascii=False, indent=2)
 
 def input_nonempty(prompt):
-    pass
+    while True:
+        s = input(prompt).strip()
+        if s:
+            return s
+        print("This field cannot be empty.")
