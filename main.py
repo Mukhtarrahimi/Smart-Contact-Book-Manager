@@ -63,3 +63,14 @@ def add_contact():
     email = input("Email (optional): ").strip()
     group = input("Group (optional): ").strip()
     notes = input("Notes (optional): ").strip()
+
+    contact = {
+        "id": str(uuid.uuid4()),
+        "name": name,
+        "phone": phone,
+        "email": email,
+        "group": group,
+        "notes": notes,
+        "created_at": datetime.now().isoformat(timespec="seconds"),
+    }
+    
