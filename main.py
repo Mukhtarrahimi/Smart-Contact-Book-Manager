@@ -76,3 +76,8 @@ def add_contact():
     contacts.append(contact)
     save_contacts(contacts)
     print("✅ Contact added successfully.")
+
+
+def list_contacts():
+    contacts = load_contacts()
+    pretty_print_contacts(contacts)
