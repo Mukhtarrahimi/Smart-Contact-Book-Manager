@@ -56,4 +56,10 @@ def pretty_print_contacts(contacts):
 
 
 def add_contact():
-    pass
+    contacts = load_contacts()
+    print("\nAdd new contact")
+    name = input_nonempty("Name: ")
+    phone = input_nonempty("Phone: ")
+    email = input("Email (optional): ").strip()
+    group = input("Group (optional): ").strip()
+    notes = input("Notes (optional): ").strip()
