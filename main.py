@@ -101,3 +101,12 @@ def search_contacts():
         or q in c["email"].lower()
         or q in (c.get("group", "").lower())
     ]
+
+    if not results:
+        print("result not found")
+        return
+    print("\nsearch result: ")
+    print("-" * 60)
+    for i, c in enumerate(results, start=1):
+        print(f"{i}. {c['name']} | {c['phone']} | {c['email']} | {c.get('group','-')}")
+    print("-" * 60)
