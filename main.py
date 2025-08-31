@@ -93,3 +93,11 @@ def search_contacts():
         print("\n(list is empty)\n")
         return
     q = input_nonempty("Search term: ").lower()
+    results = [
+        c
+        for c in contacts
+        if q in c["name"].lower()
+        or q in c["phone"].lower()
+        or q in c["email"].lower()
+        or q in (c.get("group", "").lower())
+    ]
