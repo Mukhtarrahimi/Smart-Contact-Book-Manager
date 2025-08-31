@@ -112,4 +112,8 @@ def search_contacts():
     print("-" * 60)
 
 def edit_contact():
-    pass
+    contacts = load_contacts()
+    if not contacts:
+        print("\n(list empty: )\n")
+        return
+    pretty_print_contacts(contacts)
