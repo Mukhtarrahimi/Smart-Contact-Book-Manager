@@ -86,3 +86,6 @@ def add_contact():
 def list_contacts():
     contacts = load_contacts()
     pretty_print_contacts(contacts)
+
+def search_contacts():
+    pass
