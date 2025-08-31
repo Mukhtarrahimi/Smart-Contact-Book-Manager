@@ -110,3 +110,6 @@ def search_contacts():
     for i, c in enumerate(results, start=1):
         print(f"{i}. {c['name']} | {c['phone']} | {c['email']} | {c.get('group','-')}")
     print("-" * 60)
+
+def edit_contact():
+    pass
