@@ -125,3 +125,14 @@ def edit_contact():
     except ValueError:
         print("Invalid input")
         return
+
+    c = contacts[idx - 1]
+    name = input(f"Name [{c['name']}]: ").strip() or c["name"]
+    phone = input(f"Number [{c['phone']}]: ").strip() or c["phone"]
+    email = input(f"Email [{c['email']}]: ").strip() or c["email"]
+    group = input(f"Group [{c.get('group','')}]: ").strip() or c.get("group", "")
+    notes = input(f"Note [{c.get('notes','')}]: ").strip() or c.get("notes", "")
+
+    c.update(
+        {"name": name, "phone": phone, "email": email, "group": group, "notes": notes}
+    )
