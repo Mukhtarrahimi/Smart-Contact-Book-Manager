@@ -136,3 +136,5 @@ def edit_contact():
     c.update(
         {"name": name, "phone": phone, "email": email, "group": group, "notes": notes}
     )
+    save_contacts(contacts)
+    print("Edit done.")
