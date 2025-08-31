@@ -88,4 +88,8 @@ def list_contacts():
     pretty_print_contacts(contacts)
 
 def search_contacts():
-    pass
+    contacts = load_contacts()
+    if not contacts:
+        print("\n(list is empty)\n")
+        return
+    q = input_nonempty("Search term: ").lower()
