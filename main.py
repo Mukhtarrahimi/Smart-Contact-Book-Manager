@@ -117,8 +117,11 @@ def edit_contact():
         print("\n(list empty: )\n")
         return
     pretty_print_contacts(contacts)
-     try:
+    try:
         idx = int(input("Row number to edit").strip())
         if idx < 1 or idx > len(contacts):
             print("Invalid number")
             return
+    except ValueError:
+        print("Invalid input")
+        return
