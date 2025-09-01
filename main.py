@@ -169,3 +169,27 @@ def export_pdf(filename=None):
     contacts = load_contacts()
     if filename is None or not filename.strip():
         filename = f"contacts_{datetime.now().strftime('%Y%m%d_%H%M')}.pdf"
+
+    doc = SimpleDocTemplate(
+        filename,
+        pagesize=A4,
+        rightMargin=24,
+        leftMargin=24,
+        topMargin=24,
+        bottomMargin=24,
+    )
+    styles = getSampleStyleSheet()
+    elems = []
+
+    title = Paragraph("Contacts Directory", styles["Title"])
+    datep = Paragraph(
+        f"PDF Generated At: {datetime.now().strftime('%Y-%m-%d %H:%M')}",
+        styles["Normal"],
+    )
+    elems.extend([title, Spacer(1, 12), datep, Spacer(1, 18)])
+
+    if not contacts:
+        elems.append(Paragraph("No contacts available.", styles["Normal"]))
+        doc.build(elems)
+        print(f"📄 Empty PDF created: {filename}")
+        return
