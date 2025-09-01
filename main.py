@@ -230,4 +230,26 @@ def export_pdf(filename=None):
 
 
 def main():
-    pass
+    while True:
+        print(MENU)
+        choice = input("Enter your choice: ").strip()
+
+        if choice == "1":
+            add_contact()
+        elif choice == "2":
+            list_contacts()
+        elif choice == "3":
+            search_contacts()
+        elif choice == "4":
+            edit_contact()
+        elif choice == "5":
+            delete_contact()
+        elif choice == "6":
+            name = input("PDF file name (optional - press Enter for default): ").strip()
+            export_pdf(name if name else None)
+        elif choice == "0":
+            print("Goodbye! 👋")
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
