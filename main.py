@@ -227,3 +227,7 @@ def export_pdf(filename=None):
 
     doc.build(elems)
     print(f" PDF created: {filename}")
+
+
+def main():
+    pass
