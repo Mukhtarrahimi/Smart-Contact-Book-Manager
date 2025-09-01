@@ -157,3 +157,9 @@ def delete_contact():
     confirm = (
         input(f"about deleting«{c['name']}» Are you sure؟ (y/n): ").strip().lower()
     )
+    if confirm == "y":
+        del contacts[idx - 1]
+        save_contacts(contacts)
+        print("contact deleted")
+    else:
+        print("canceled")
