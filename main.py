@@ -138,3 +138,6 @@ def edit_contact():
     )
     save_contacts(contacts)
     print("Edit done.")
+
+def delete_contact():
+    pass
