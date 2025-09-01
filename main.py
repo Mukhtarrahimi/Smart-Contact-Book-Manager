@@ -163,3 +163,9 @@ def delete_contact():
         print("contact deleted")
     else:
         print("canceled")
+
+
+def export_pdf(filename=None):
+    contacts = load_contacts()
+    if filename is None or not filename.strip():
+        filename = f"contacts_{datetime.now().strftime('%Y%m%d_%H%M')}.pdf"
