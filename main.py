@@ -193,3 +193,17 @@ def export_pdf(filename=None):
         doc.build(elems)
         print(f"📄 Empty PDF created: {filename}")
         return
+
+    # Table headers
+    data = [["No.", "Name", "Phone", "Email", "Group", "Notes"]]
+    for i, c in enumerate(contacts, start=1):
+        data.append(
+            [
+                str(i),
+                c.get("name", ""),
+                c.get("phone", ""),
+                c.get("email", ""),
+                c.get("group", ""),
+                c.get("notes", ""),
+            ]
+        )
