@@ -140,4 +140,8 @@ def edit_contact():
     print("Edit done.")
 
 def delete_contact():
-    pass
+    contacts = load_contacts()
+    if not contacts:
+        print("\n(list empty)\n")
+        return
+    pretty_print_contacts(contacts)
