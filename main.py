@@ -145,3 +145,15 @@ def delete_contact():
         print("\n(list empty)\n")
         return
     pretty_print_contacts(contacts)
+    try:
+        idx = int(input("row number for delete").strip())
+        if idx < 1 or idx > len(contacts):
+            print("invalid number")
+            return
+    except ValueError:
+        print("invalid input")
+        return
+    c = contacts[idx - 1]
+    confirm = (
+        input(f"about deleting«{c['name']}» Are you sure؟ (y/n): ").strip().lower()
+    )
